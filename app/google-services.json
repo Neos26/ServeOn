@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "766270880132",
+    "project_id": "serveon-authentication",
+    "storage_bucket": "serveon-authentication.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766270880132:android:8f29947092167c354b05d1",
+        "android_client_info": {
+          "package_name": "com.example.serveon_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYQ4lJTzeOT56eYIWAi03S0njpV8X7cPY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
