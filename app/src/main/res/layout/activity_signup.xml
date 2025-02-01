@@ -5,9 +5,36 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/signup_1"
+    android:background="@drawable/login_bgk2"
     android:padding="16dp"
     tools:context=".signupActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="160dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
+        android:text="Signup"
+        android:textColor="@color/white"
+        android:textSize="70sp"
+        app:layout_constraintBottom_toTopOf="@+id/signup_Email"
+        tools:layout_editor_absoluteX="16dp">
+
+    </TextView>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Email:"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+
+        android:layout_marginTop="365dp"
+        android:layout_marginStart="30dp">
+
+    </TextView>
 
     <EditText
         android:layout_width="0dp"
@@ -28,6 +55,18 @@
         app:layout_constraintBottom_toTopOf="@+id/signup_Password">
 
     </EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Password:"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+
+        android:layout_marginTop="487dp"
+        android:layout_marginStart="30dp">
+
+    </TextView>
 
     <EditText
         android:layout_width="0dp"

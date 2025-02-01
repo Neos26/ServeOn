@@ -5,23 +5,25 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_blue"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/constraintLayout"
+        android:background="@drawable/bg_totoo"
         android:layout_marginTop="20dp">
 
         <TextView
             android:id="@+id/amazonName"
             android:layout_width="0dp"
             android:layout_height="42dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="60dp"
             android:fontFamily="@font/gabarito_bold"
             android:text="ServeOn"
-            android:textColor="@color/dark_blue"
+            android:textColor="@color/white"
             android:textSize="40sp"
             app:layout_constraintEnd_toStartOf="@+id/amazonImage"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,22 +33,23 @@
             android:id="@+id/amazonDesc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
+            android:layout_marginStart="90dp"
             android:text="Find. Book. Done."
-            android:textColor="@color/dark_blue"
+            android:textColor="@color/white"
             android:textSize="14sp"
             app:layout_constraintEnd_toStartOf="@+id/amazonImage"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/amazonName" />
+
         <ImageView
+            android:id="@+id/amazonImage"
             android:layout_width="0dp"
             android:layout_height="150dp"
-            android:id="@+id/amazonImage"
-            android:src="@drawable/logo_final"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="16dp"
-            app:layout_constraintStart_toEndOf="@id/amazonName"/>
+            android:src="@drawable/logo_final_"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/amazonName"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -402,6 +405,97 @@
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:id="@+id/photographerImage"
+                        android:src="@drawable/photographer"
+                        android:layout_marginTop="15dp"
+                        android:layout_centerHorizontal="true">
+
+                    </ImageView>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="175dp"
+            android:id="@+id/row5"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/row4">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/barberCard1"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardElevation="20dp"
+                app:cardCornerRadius="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/barber1"
+                        android:text="Barber"
+                        android:textSize="20sp"
+                        android:textColor="@color/dark_blue"
+                        android:fontFamily="@font/gabarito_bold"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/barberImage1"/>
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:id="@+id/barberImage1"
+                        android:src="@drawable/barber"
+                        android:layout_marginTop="15dp"
+                        android:layout_centerHorizontal="true">
+
+                    </ImageView>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/photographerCard1"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardElevation="20dp"
+                app:cardCornerRadius="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/photographe1r"
+                        android:text="Photographer"
+                        android:textSize="17sp"
+                        android:textColor="@color/dark_blue"
+                        android:fontFamily="@font/gabarito_bold"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/photographerImage1"/>
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:id="@+id/photographerImage1"
                         android:src="@drawable/photographer"
                         android:layout_marginTop="15dp"
                         android:layout_centerHorizontal="true">
