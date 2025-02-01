@@ -1,6 +1,6 @@
 package com.example.serveon_app
 
-import android.content.Intent
+
 import android.os.Bundle
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
@@ -10,14 +10,11 @@ import java.util.Locale
 
 class Tutoring_Details : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
-    private lateinit var dataList: ArrayList<dataClass>
+    private lateinit var detailsDataList: ArrayList<detailsDataClass>
     private lateinit var imageList: Array<Int>
     private lateinit var titleList: Array<String>
-    private lateinit var descList: Array<String>
-    private lateinit var detailImageList: Array<Int>
-    private lateinit var myAdapter: detail_adapter
     private lateinit var searchView: SearchView
-    private lateinit var searchList: ArrayList<dataClass>
+    private lateinit var searchList: ArrayList<detailsDataClass>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,34 +44,13 @@ class Tutoring_Details : AppCompatActivity() {
             "Computer Organization",
             "Platform Technologies")
 
-        descList = arrayOf(
-            getString(R.string.listview),
-            getString(R.string.checkbox),
-            getString(R.string.imageview),
-            getString(R.string.toggle),
-            getString(R.string.date),
-            getString(R.string.rating),
-            getString(R.string.textview),
-            getString(R.string.edit),
-            getString(R.string.camera))
-
-        detailImageList = arrayOf(
-            R.drawable.list_detail,
-            R.drawable.check_detail,
-            R.drawable.image_detail,
-            R.drawable.toggle_detail,
-            R.drawable.date_detail,
-            R.drawable.rating_detail,
-            R.drawable.text_detail,
-            R.drawable.edit_detail,
-            R.drawable.camera_detail)
 
         recyclerView = findViewById(R.id.recyclerView)
         searchView = findViewById(R.id.search)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
 
-        dataList = arrayListOf()
+        detailsDataList = arrayListOf()
         searchList = arrayListOf()
         getData()
 
@@ -89,7 +65,7 @@ class Tutoring_Details : AppCompatActivity() {
                 searchList.clear()
                 val searchText = newText!!.lowercase(Locale.getDefault())
                 if (searchText.isNotEmpty()){
-                    dataList.forEach{
+                    detailsDataList.forEach{
                         if (it.dataTitle.lowercase(Locale.getDefault()).contains(searchText)){
                             searchList.add(it)
                         }
@@ -97,31 +73,24 @@ class Tutoring_Details : AppCompatActivity() {
                     recyclerView.adapter!!.notifyDataSetChanged()
                 }else{
                     searchList.clear()
-                    searchList.addAll(dataList)
+                    searchList.addAll(detailsDataList)
                     recyclerView.adapter!!.notifyDataSetChanged()
                 }
                 return false
             }
 
         })
-        myAdapter = detail_adapter(searchList)
-        recyclerView.adapter = myAdapter
 
-        myAdapter.onItemClick = {
-            val intent = Intent(this, Tutoring_Details::class.java)
-            intent.putExtra("android", it)
-            startActivity(intent)
-        }
     }
 
-    private fun getData() {
-        for (i in imageList.indices) {
-            if (i < titleList.size) {
-                val dataClass = dataClass(imageList[i], titleList[i], descList[i], detailImageList[i])
-                dataList.add(dataClass)
+        private fun getData() {
+            for (i in imageList.indices) {
+                if (i < titleList.size) {
+                    val dataClass = detailsDataClass(imageList[i], titleList[i])
+                    detailsDataList.add(dataClass)
+                }
             }
+            searchList.addAll(detailsDataList)
+            recyclerView.adapter = detail_adapter(searchList)
         }
-        searchList.addAll(dataList)
-        recyclerView.adapter = adapterClass(searchList)
     }
-}

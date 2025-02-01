@@ -7,9 +7,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class detail_adapter(private val dataList: ArrayList<dataClass>) : RecyclerView.Adapter<detail_adapter.ViewHolderClass>() {
+class detail_adapter(private val detailsDataList: ArrayList<detailsDataClass>) : RecyclerView.Adapter<detail_adapter.ViewHolderClass>() {
 
-    var onItemClick : ((dataClass) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderClass {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.details_item_layout, parent, false)
@@ -17,17 +16,13 @@ class detail_adapter(private val dataList: ArrayList<dataClass>) : RecyclerView.
     }
 
     override fun getItemCount(): Int {
-        return dataList.size
+        return detailsDataList.size
     }
 
     override fun onBindViewHolder(holder: ViewHolderClass, position: Int) {
-        val currentItem = dataList[position]
+        val currentItem = detailsDataList[position]
         holder.rvImage.setImageResource(currentItem.dataImage)
         holder.rvTitle.text = currentItem.dataTitle
-
-        holder.itemView.setOnClickListener{
-            onItemClick?.invoke(currentItem)
-        }
     }
 
     class ViewHolderClass(itemView: View) : RecyclerView.ViewHolder(itemView) {

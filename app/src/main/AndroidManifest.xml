@@ -12,11 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ServeOn_app"
         tools:targetApi="31">
+
         <activity
             android:name=".Tutoring_Details"
-            android:exported="false" />
-        <activity
-            android:name=".tutoring_upload"
             android:exported="false" />
         <activity
             android:name=".carpenter_Activity"
@@ -46,7 +44,7 @@
             android:name=".tutoring_Activity"
             android:exported="false" />
         <activity
-            android:name=".login_Activity"
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -54,6 +52,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".login_Activity"
+            android:exported="true" />
+
         <activity
             android:name=".signup_Activity"
             android:exported="false" />
