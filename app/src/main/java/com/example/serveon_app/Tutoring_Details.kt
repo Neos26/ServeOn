@@ -45,8 +45,8 @@ class Tutoring_Details : AppCompatActivity() {
             "Platform Technologies")
 
 
-        recyclerView = findViewById(R.id.recyclerView)
-        searchView = findViewById(R.id.search)
+        recyclerView = findViewById(R.id.recyclerViewTutoring)
+        searchView = findViewById(R.id.searchTutoring)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
 

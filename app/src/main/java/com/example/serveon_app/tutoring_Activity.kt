@@ -70,8 +70,8 @@ class tutoring_Activity : AppCompatActivity() {
             R.drawable.edit_detail,
             R.drawable.camera_detail)
 
-        recyclerView = findViewById(R.id.recyclerView)
-        searchView = findViewById(R.id.search)
+        recyclerView = findViewById(R.id.recyclerViewTutoring)
+        searchView = findViewById(R.id.searchTutoring)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
 

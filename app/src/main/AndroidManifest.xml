@@ -13,8 +13,12 @@
         android:theme="@style/Theme.ServeOn_app"
         tools:targetApi="31">
         <activity
+            android:name=".User_display"
+            android:exported="false"
+            android:parentActivityName=".userUpload" />
+        <activity
             android:name=".userUpload"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Tutoring_Details"
             android:exported="false" />

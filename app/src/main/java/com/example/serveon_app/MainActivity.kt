@@ -1,5 +1,6 @@
 package com.example.serveon_app
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -27,7 +28,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var barberCard: CardView
     private lateinit var photographerCard: CardView
     private lateinit var userCard: CardView
+    private lateinit var displayCard: CardView
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -50,6 +53,8 @@ class MainActivity : AppCompatActivity() {
         barberCard = findViewById(R.id.barberCard)
         photographerCard = findViewById(R.id.photographerCard)
         userCard = findViewById(R.id.userCard)
+        displayCard = findViewById(R.id.displayCard)
+
 
 
         tutoringCard.setOnClickListener{
@@ -96,6 +101,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, userUpload::class.java)
             startActivity(intent)
         }
+        displayCard.setOnClickListener{
+            val intent = Intent(this, User_display::class.java)
+            startActivity(intent)
+        }
+
 
 
         val imageSlider: ImageSlider = findViewById(R.id.imageSlider)
