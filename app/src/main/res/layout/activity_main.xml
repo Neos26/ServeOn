@@ -475,6 +475,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/dark_blue"
             app:layout_constraintTop_toBottomOf="@id/row4"
             android:layout_marginBottom="100dp">
 
@@ -499,7 +500,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/gabarito_bold"
-                        android:text="Users Services"
+                        android:text="Upload Services"
                         android:textColor="@color/dark_blue"
                         android:textSize="20sp" />
 
@@ -516,6 +517,8 @@
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
+
+
 
         </LinearLayout>
 
