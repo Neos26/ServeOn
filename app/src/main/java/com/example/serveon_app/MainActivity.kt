@@ -1,9 +1,16 @@
 package com.example.serveon_app
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.widget.ImageView.ScaleType
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
+import androidx.core.graphics.blue
+import com.denzcoskun.imageslider.ImageSlider
+import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.models.SlideModel
 import com.example.serveon_app.databinding.ActivityMainBinding
 
 
@@ -19,10 +26,15 @@ class MainActivity : AppCompatActivity() {
     private lateinit var electricianCard: CardView
     private lateinit var barberCard: CardView
     private lateinit var photographerCard: CardView
+    private lateinit var userCard: CardView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        window.statusBarColor = ContextCompat.getColor(this, R.color.dark_blue)
+
+
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -37,6 +49,7 @@ class MainActivity : AppCompatActivity() {
         electricianCard = findViewById(R.id.electricianCard)
         barberCard = findViewById(R.id.barberCard)
         photographerCard = findViewById(R.id.photographerCard)
+        userCard = findViewById(R.id.userCard)
 
 
         tutoringCard.setOnClickListener{
@@ -78,6 +91,20 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, photographer_Activity::class.java)
             startActivity(intent)
         }
+
+        userCard.setOnClickListener{
+            val intent = Intent(this, userUpload::class.java)
+            startActivity(intent)
+        }
+
+
+        val imageSlider: ImageSlider = findViewById(R.id.imageSlider)
+        val sliderModels = ArrayList<SlideModel>()
+        sliderModels.add(SlideModel(R.drawable.camera_detail, ScaleTypes.FIT))
+        sliderModels.add(SlideModel(R.drawable.image_detail, ScaleTypes.FIT))
+        sliderModels.add(SlideModel(R.drawable.check_detail, ScaleTypes.FIT))
+
+        imageSlider.setImageList(sliderModels, ScaleTypes.FIT)
 
 
 
