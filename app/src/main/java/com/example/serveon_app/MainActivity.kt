@@ -4,7 +4,9 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.ImageView.ScaleType
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
@@ -19,23 +21,19 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    private lateinit var tutoringCard: CardView
-    private lateinit var deliveryCard: CardView
-    private lateinit var cateringCard: CardView
-    private lateinit var plumbingCard: CardView
-    private lateinit var landscapingCard: CardView
-    private lateinit var electricianCard: CardView
-    private lateinit var barberCard: CardView
-    private lateinit var photographerCard: CardView
-    private lateinit var userCard: CardView
-    private lateinit var displayCard: CardView
+    private lateinit var tutoringCard: ImageView
+    private lateinit var deliveryCard: ImageView
+    private lateinit var cateringCard: ImageView
+    private lateinit var plumbingCard: ImageView
+    private lateinit var SeeAll: TextView
+
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        window.statusBarColor = ContextCompat.getColor(this, R.color.dark_blue)
+        window.statusBarColor = ContextCompat.getColor(this, R.color.white)
 
 
 
@@ -44,16 +42,11 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        tutoringCard = findViewById(R.id.tutoringCard)
-        deliveryCard = findViewById(R.id.DeliveryCard)
-        cateringCard = findViewById(R.id.cateringCard)
-        plumbingCard = findViewById(R.id.plumbingCard)
-        landscapingCard = findViewById(R.id.landscapingCard)
-        electricianCard = findViewById(R.id.electricianCard)
-        barberCard = findViewById(R.id.barberCard)
-        photographerCard = findViewById(R.id.photographerCard)
-        userCard = findViewById(R.id.userCard)
-        displayCard = findViewById(R.id.displayCard)
+        tutoringCard = findViewById(R.id.tutoringSide)
+        deliveryCard = findViewById(R.id.plumbingSide)
+        cateringCard = findViewById(R.id.photographerSide)
+        plumbingCard = findViewById(R.id.deliverySide)
+        SeeAll = findViewById(R.id.seeAllTExt)
 
 
 
@@ -77,31 +70,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        landscapingCard.setOnClickListener{
-            val intent = Intent(this, landscaping_Activity::class.java)
-            startActivity(intent)
-        }
-
-        electricianCard.setOnClickListener{
-            val intent = Intent(this, electrician_Activity::class.java)
-            startActivity(intent)
-        }
-
-        barberCard.setOnClickListener{
-            val intent = Intent(this, barber_Activity::class.java)
-            startActivity(intent)
-        }
-
-        photographerCard.setOnClickListener{
-            val intent = Intent(this, photographer_Activity::class.java)
-            startActivity(intent)
-        }
-
-        userCard.setOnClickListener{
-            val intent = Intent(this, userUpload::class.java)
-            startActivity(intent)
-        }
-        displayCard.setOnClickListener{
+        SeeAll.setOnClickListener{
             val intent = Intent(this, User_display::class.java)
             startActivity(intent)
         }

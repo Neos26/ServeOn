@@ -32,8 +32,8 @@ class adapterClass (private val dataList: ArrayList<dataClass>) : RecyclerView.A
     }
 
     class ViewHolderClass(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val rvImage:ImageView = itemView.findViewById(R.id.image)
-        val rvTitle: TextView = itemView.findViewById(R.id.title)
+        val rvImage:ImageView = itemView.findViewById(R.id.pic)
+        val rvTitle: TextView = itemView.findViewById(R.id.service_title)
 
     }
 }

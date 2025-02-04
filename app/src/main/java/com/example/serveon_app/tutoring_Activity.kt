@@ -2,6 +2,7 @@ package com.example.serveon_app
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,6 +20,7 @@ class tutoring_Activity : AppCompatActivity() {
     private lateinit var myAdapter: adapterClass
     private lateinit var searchView: SearchView
     private lateinit var searchList: ArrayList<dataClass>
+    private lateinit var back_btn: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,8 +74,10 @@ class tutoring_Activity : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.recyclerViewTutoring)
         searchView = findViewById(R.id.searchTutoring)
+        back_btn = findViewById(R.id.back_btn)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
+
 
         dataList = arrayListOf()
         searchList = arrayListOf()
@@ -124,5 +128,11 @@ class tutoring_Activity : AppCompatActivity() {
         }
         searchList.addAll(dataList)
         recyclerView.adapter = adapterClass(searchList)
+
+
+        back_btn.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
