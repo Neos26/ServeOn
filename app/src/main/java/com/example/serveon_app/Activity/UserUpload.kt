@@ -1,13 +1,14 @@
-package com.example.serveon_app
+package com.example.serveon_app.Activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.serveon_app.DBhelper
+import com.example.serveon_app.R
 import com.google.android.material.textfield.TextInputEditText
 
 class userUpload : AppCompatActivity() {
@@ -15,6 +16,7 @@ class userUpload : AppCompatActivity() {
     private lateinit var info: TextInputEditText
     private lateinit var upload: Button
     private lateinit var db: DBhelper
+    private lateinit var homeIcon: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +25,7 @@ class userUpload : AppCompatActivity() {
         name = findViewById(R.id.textEdit)
         info = findViewById(R.id.textEdit2)
         upload = findViewById(R.id.button)
+        homeIcon = findViewById(R.id.homeIcon2)
         db =  DBhelper(this)
 
         upload.setOnClickListener {
@@ -41,6 +44,11 @@ class userUpload : AppCompatActivity() {
             }
 
         }
+
+        homeIcon.setOnClickListener{
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
 
     }
 }

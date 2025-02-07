@@ -7,10 +7,11 @@
     android:layout_height="match_parent"
     android:background="@drawable/login_bgk2"
     android:padding="16dp"
-    tools:context=".loginActivity">
+    tools:context=".Activity.login_Activity">
 
 
     <TextView
+        android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="160dp"
@@ -20,51 +21,57 @@
         android:textColor="@color/white"
         android:textSize="80sp"
         app:layout_constraintBottom_toTopOf="@+id/login_Email"
-        tools:layout_editor_absoluteX="16dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </TextView>
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="270dp"
         android:text="Email:"
         android:textColor="@color/white"
-        android:textSize="18dp"
 
-        android:layout_marginTop="365dp"
-        android:layout_marginStart="30dp">
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/login_Password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
 
     </TextView>
 
     <EditText
+        android:id="@+id/login_Email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:id="@+id/login_Email"
-        android:inputType="textEmailAddress"
-        android:hint="Email"
-        android:backgroundTint="@color/white"
-        android:padding="12dp"
-        android:background="@drawable/edittext_border"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="355dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="355dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/login_Password">
+        android:background="@drawable/edittext_border"
+        android:backgroundTint="@color/white"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </EditText>
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="250dp"
         android:text="Password:"
         android:textColor="@color/white"
         android:textSize="18dp"
-
-        android:layout_marginTop="487dp"
-        android:layout_marginStart="30dp">
+        app:layout_constraintBottom_toTopOf="@+id/login_Password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_Email">
 
     </TextView>
 

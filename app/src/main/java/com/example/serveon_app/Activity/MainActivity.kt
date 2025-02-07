@@ -1,19 +1,16 @@
-package com.example.serveon_app
+package com.example.serveon_app.Activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.ImageView.ScaleType
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
-import androidx.core.graphics.blue
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
+import com.example.serveon_app.R
 import com.example.serveon_app.databinding.ActivityMainBinding
 
 
@@ -26,6 +23,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var cateringCard: ImageView
     private lateinit var plumbingCard: ImageView
     private lateinit var SeeAll: TextView
+    private lateinit var homeIcon: ImageView
+    private lateinit var uploadIcon: ImageView
+
+
 
 
     @SuppressLint("MissingInflatedId")
@@ -46,6 +47,8 @@ class MainActivity : AppCompatActivity() {
         deliveryCard = findViewById(R.id.plumbingSide)
         cateringCard = findViewById(R.id.photographerSide)
         plumbingCard = findViewById(R.id.deliverySide)
+        homeIcon = findViewById(R.id.homeIcon)
+        uploadIcon = findViewById(R.id.walletIcon)
         SeeAll = findViewById(R.id.seeAllTExt)
 
 
@@ -72,6 +75,18 @@ class MainActivity : AppCompatActivity() {
 
         SeeAll.setOnClickListener{
             val intent = Intent(this, User_display::class.java)
+            startActivity(intent)
+        }
+
+        homeIcon.setOnClickListener {
+            if (this::class.java != MainActivity::class.java) {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
+        }
+
+        uploadIcon.setOnClickListener{
+            val intent = Intent(this, userUpload::class.java)
             startActivity(intent)
         }
 

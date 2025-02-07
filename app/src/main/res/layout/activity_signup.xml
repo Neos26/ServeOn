@@ -7,64 +7,69 @@
     android:layout_height="match_parent"
     android:background="@drawable/login_bgk2"
     android:padding="16dp"
-    tools:context=".signupActivity">
+    tools:context=".Activity.signup_Activity">
 
     <TextView
+        android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="160dp"
         android:fontFamily="@font/poppins_semibold"
         android:gravity="center"
-        android:text="Signup"
+        android:text="SignUp"
         android:textColor="@color/white"
-        android:textSize="70sp"
+        android:textSize="80sp"
         app:layout_constraintBottom_toTopOf="@+id/signup_Email"
-        tools:layout_editor_absoluteX="16dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </TextView>
 
-
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="270dp"
         android:text="Email:"
         android:textColor="@color/white"
         android:textSize="18dp"
-
-        android:layout_marginTop="365dp"
-        android:layout_marginStart="30dp">
+        app:layout_constraintBottom_toTopOf="@+id/signup_Password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
 
     </TextView>
 
     <EditText
+        android:id="@+id/signup_Email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:id="@+id/signup_Email"
-        android:inputType="textEmailAddress"
-        android:hint="Email"
-        android:backgroundTint="@color/white"
-        android:padding="12dp"
-        android:background="@drawable/edittext_border"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="355dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="355dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/signup_Password">
+        android:background="@drawable/edittext_border"
+        android:backgroundTint="@color/white"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </EditText>
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="250dp"
         android:text="Password:"
         android:textColor="@color/white"
         android:textSize="18dp"
-
-        android:layout_marginTop="487dp"
-        android:layout_marginStart="30dp">
+        app:layout_constraintBottom_toTopOf="@+id/signup_Password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signup_Email">
 
     </TextView>
 
@@ -72,8 +77,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:id="@+id/signup_Password"
-        android:inputType="textPassword"
         android:hint="Password"
+        android:inputType="textPassword"
         android:backgroundTint="@color/white"
         android:padding="12dp"
         android:background="@drawable/edittext_border"
@@ -90,9 +95,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:id="@+id/signup_Button"
-        android:text="SIGNUP"
-        android:textColor="@color/black"
+        android:text="LOGIN"
+        android:fontFamily="@font/poppins_semibold"
         android:backgroundTint="@color/white"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
@@ -108,7 +114,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:id="@+id/loginText"
-        android:text="Already Registered? LOGIN"
+        android:text="Already registered? LOGIN"
         android:textSize="18sp"
         android:gravity="center"
         android:textColor="@color/white"

@@ -1,14 +1,10 @@
-package com.example.serveon_app
+package com.example.serveon_app.Activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.serveon_app.databinding.ActivityLoginBinding
-import com.example.serveon_app.databinding.ActivitySignupBinding
 import com.google.firebase.auth.FirebaseAuth
 
 class login_Activity : AppCompatActivity() {

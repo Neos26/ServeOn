@@ -1,4 +1,4 @@
-package com.example.serveon_app
+package com.example.serveon_app.Adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.serveon_app.DataClasses.dataClass
+import com.example.serveon_app.R
 
 class adapterClass (private val dataList: ArrayList<dataClass>) : RecyclerView.Adapter<adapterClass.ViewHolderClass>() {
 

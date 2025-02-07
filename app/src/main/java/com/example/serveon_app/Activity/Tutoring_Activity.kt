@@ -1,12 +1,16 @@
-package com.example.serveon_app
+package com.example.serveon_app.Activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.serveon_app.R
+import com.example.serveon_app.Adapters.adapterClass
+import com.example.serveon_app.DataClasses.dataClass
 import java.util.Locale
 
 class tutoring_Activity : AppCompatActivity() {
@@ -16,6 +20,10 @@ class tutoring_Activity : AppCompatActivity() {
     private lateinit var imageList: Array<Int>
     private lateinit var titleList: Array<String>
     private lateinit var descList: Array<String>
+    private lateinit var nameList: Array<String>
+    private lateinit var serviceList: Array<String>
+    private lateinit var contactList: Array<String>
+    private lateinit var ratingList: Array<String>
     private lateinit var detailImageList: Array<Int>
     private lateinit var myAdapter: adapterClass
     private lateinit var searchView: SearchView
@@ -25,6 +33,8 @@ class tutoring_Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tutoring)
+
+        window.statusBarColor = ContextCompat.getColor(this, R.color.white)
 
 
 
@@ -37,7 +47,8 @@ class tutoring_Activity : AppCompatActivity() {
             R.drawable.ic_rating,
             R.drawable.ic_time,
             R.drawable.ic_text,
-            R.drawable.ic_edit)
+            R.drawable.ic_edit
+        )
 
         titleList = arrayOf(
             "Application Development",
@@ -49,6 +60,51 @@ class tutoring_Activity : AppCompatActivity() {
             "Discrete Structures",
             "Computer Organization",
             "Platform Technologies")
+
+        nameList = arrayOf(
+            "Jerry Lucas",
+            "Information Management",
+            "Data structures",
+            "Introduction to Programming",
+            "Introduction to Computing ",
+            "Object Oriented Programming",
+            "Discrete Structures",
+            "Computer Organization",
+            "Platform Technologies")
+
+        serviceList = arrayOf(
+            "Tutoring",
+            "Information Management",
+            "Data structures",
+            "Introduction to Programming",
+            "Introduction to Computing ",
+            "Object Oriented Programming",
+            "Discrete Structures",
+            "Computer Organization",
+            "Platform Technologies")
+
+        contactList = arrayOf(
+            "JerryLucas@gmail.com",
+            "Information Management",
+            "Data structures",
+            "Introduction to Programming",
+            "Introduction to Computing ",
+            "Object Oriented Programming",
+            "Discrete Structures",
+            "Computer Organization",
+            "Platform Technologies")
+
+        ratingList = arrayOf(
+            "300 pesos /1hr",
+            "Information Management",
+            "Data structures",
+            "Introduction to Programming",
+            "Introduction to Computing ",
+            "Object Oriented Programming",
+            "Discrete Structures",
+            "Computer Organization",
+            "Platform Technologies")
+
 
         descList = arrayOf(
             getString(R.string.listview),
@@ -70,7 +126,8 @@ class tutoring_Activity : AppCompatActivity() {
             R.drawable.rating_detail,
             R.drawable.text_detail,
             R.drawable.edit_detail,
-            R.drawable.camera_detail)
+            R.drawable.camera_detail
+        )
 
         recyclerView = findViewById(R.id.recyclerViewTutoring)
         searchView = findViewById(R.id.searchTutoring)
@@ -122,7 +179,8 @@ class tutoring_Activity : AppCompatActivity() {
     private fun getData() {
         for (i in imageList.indices) {
             if (i < titleList.size) {
-                val dataClass = dataClass(imageList[i], titleList[i], descList[i], detailImageList[i])
+                val dataClass = dataClass(imageList[i], titleList[i], descList[i], nameList[i], contactList[i], serviceList[i],
+                    ratingList[i], detailImageList[i])
                 dataList.add(dataClass)
             }
         }

@@ -1,11 +1,7 @@
 <resources>
     <string name="app_name">ServeOn</string>
 
-    <string name="listview">A list view is an adapter view that does not know the details, such as type and contents, of the views it contains.
-        Instead list view requests views on demand from a ListAdapter as needed, such as to display new views as the
-        user scrolls up or down. In order to display items in the list, call setAdapter(android.widget.ListAdapter)
-        to associate an adapter with the list. For a simple example, see the discussion of filling an adapter view
-        with text in the Layouts guide.</string>
+    <string name="listview"> Jerry Lucas</string>
     <string name="checkbox">Checkboxes allow the user to select one or more options from a set.
         Typically, you should present each checkbox option in a vertical list. To create each checkbox option,
         create a CheckBox in your layout. Because a set of checkbox options allows the user to select multiple items,

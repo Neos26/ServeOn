@@ -1,12 +1,17 @@
-package com.example.serveon_app
+package com.example.serveon_app.DataClasses
 
 import android.os.Parcel
 import android.os.Parcelable
 
-data class dataClass(var dataImage: Int, var dataTitle: String, var dataDesc: String, var dataDetailImage: Int):
+data class dataClass(var dataImage: Int, var dataTitle: String,var dataDesc: String, var namelist: String, var servicelist: String,
+                     var contactlist: String, var ratinglist: String, var dataDetailImage: Int):
     Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
+        parcel.readString()!!,
+        parcel.readString()!!,
+        parcel.readString()!!,
+        parcel.readString()!!,
         parcel.readString()!!,
         parcel.readString()!!,
         parcel.readInt()
@@ -17,6 +22,10 @@ data class dataClass(var dataImage: Int, var dataTitle: String, var dataDesc: St
         parcel.writeInt(dataImage)
         parcel.writeString(dataTitle)
         parcel.writeString(dataDesc)
+        parcel.writeString(namelist)
+        parcel.writeString(servicelist)
+        parcel.writeString(contactlist)
+        parcel.writeString(ratinglist)
         parcel.writeInt(dataDetailImage)
     }
 

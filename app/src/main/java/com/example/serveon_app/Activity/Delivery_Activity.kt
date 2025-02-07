@@ -1,14 +1,14 @@
-package com.example.serveon_app
+package com.example.serveon_app.Activity
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.serveon_app.R
+import com.example.serveon_app.Adapters.adapterClass
+import com.example.serveon_app.DataClasses.dataClass
 import java.util.Locale
 
 class delivery_Activity : AppCompatActivity() {
@@ -18,6 +18,10 @@ class delivery_Activity : AppCompatActivity() {
     private lateinit var imageList: Array<Int>
     private lateinit var titleList: Array<String>
     private lateinit var descList: Array<String>
+    private lateinit var nameList: Array<String>
+    private lateinit var serviceList: Array<String>
+    private lateinit var contactList: Array<String>
+    private lateinit var ratingList: Array<String>
     private lateinit var detailImageList: Array<Int>
     private lateinit var myAdapter: adapterClass
     private lateinit var searchView: SearchView
@@ -36,7 +40,8 @@ class delivery_Activity : AppCompatActivity() {
             R.drawable.ic_rating,
             R.drawable.ic_time,
             R.drawable.ic_text,
-            R.drawable.ic_edit)
+            R.drawable.ic_edit
+        )
 
         titleList = arrayOf(
             "Application Development",
@@ -69,7 +74,8 @@ class delivery_Activity : AppCompatActivity() {
             R.drawable.rating_detail,
             R.drawable.text_detail,
             R.drawable.edit_detail,
-            R.drawable.camera_detail)
+            R.drawable.camera_detail
+        )
 
         recyclerView = findViewById(R.id.recyclerViewDelivery)
         searchView = findViewById(R.id.searchDelivery)
@@ -119,7 +125,8 @@ class delivery_Activity : AppCompatActivity() {
     private fun getData() {
         for (i in imageList.indices) {
             if (i < titleList.size) {
-                val dataClass = dataClass(imageList[i], titleList[i], descList[i], detailImageList[i])
+                val dataClass = dataClass(imageList[i], titleList[i], descList[i], nameList[i], contactList[i], serviceList[i],
+                    ratingList[i], detailImageList[i])
                 dataList.add(dataClass)
             }
         }
