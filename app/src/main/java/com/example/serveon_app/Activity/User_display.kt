@@ -22,7 +22,8 @@ class User_display : AppCompatActivity() {
     private lateinit var searchView: SearchView
     private lateinit var dataList: ArrayList<data_list>
     private lateinit var adapter: myAdapter
-    private lateinit var db: DBhelper
+    private lateinit var dbh: DBhelper
+    private lateinit var newArray: ArrayList<data_list>
     private lateinit var back_btn3: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +36,7 @@ class User_display : AppCompatActivity() {
         back_btn3 = findViewById(R.id.back_btn)
 
         dataList = arrayListOf()
-        db = DBhelper(this)
+        dbh = DBhelper(this)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
@@ -74,18 +75,26 @@ class User_display : AppCompatActivity() {
             val intent = Intent(this, UserDetailsActivity::class.java)
             intent.putExtra("username", selectedUser.name)
             intent.putExtra("userinfo", selectedUser.info)
+            intent.putExtra("service", selectedUser.service)
+            intent.putExtra("contact", selectedUser.contact)
+            intent.putExtra("rating", selectedUser.rating)
             startActivity(intent)
         }
     }
 
     private fun displayuser() {
-        val newCursor: Cursor? = db.gettext()
+        val newCursor: Cursor? = dbh!!.gettext()
+        newArray = arrayListOf<data_list>()
         dataList.clear()
 
         while (newCursor!!.moveToNext()) {
             val uname = newCursor.getString(0)
             val uinformation = newCursor.getString(1)
-            dataList.add(data_list(uname, uinformation))
+            val uservice = newCursor.getString(2)
+            val ucontact = newCursor.getString(3)
+            val urating = newCursor.getString(4)
+            newArray.add(data_list(uname, uinformation, uservice, ucontact, urating))
+            dataList.add(data_list(uname, uinformation, uservice, ucontact, urating))
         }
 
         adapter = myAdapter(dataList) // Set up adapter with initial full list

@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.serveon_app.DataClasses.data_list
 import com.example.serveon_app.R
 
-class myAdapter(private var userList: List<data_list>) :
+class myAdapter(var userList: List<data_list>) :
     RecyclerView.Adapter<myAdapter.MyViewHolder>() {
 
     var onItemClick: ((data_list) -> Unit)? = null // Callback for item clicks
@@ -16,6 +16,9 @@ class myAdapter(private var userList: List<data_list>) :
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tname: TextView = itemView.findViewById(R.id.textView)
         val tinformation: TextView = itemView.findViewById(R.id.textView2)
+        val tservice: TextView = itemView.findViewById(R.id.textView3)
+        val tcontact: TextView = itemView.findViewById(R.id.textView4)
+        val trating: TextView = itemView.findViewById(R.id.textView5)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -28,6 +31,9 @@ class myAdapter(private var userList: List<data_list>) :
         val currentItem = userList[position]
         holder.tname.text = currentItem.name
         holder.tinformation.text = currentItem.info
+        holder.tservice.text = currentItem.service
+        holder.tcontact.text = currentItem.contact
+        holder.trating.text = currentItem.rating
 
         holder.itemView.setOnClickListener {
             onItemClick?.invoke(currentItem) // Trigger click event

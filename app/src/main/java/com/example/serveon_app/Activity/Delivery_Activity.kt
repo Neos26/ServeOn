@@ -77,8 +77,6 @@ class delivery_Activity : AppCompatActivity() {
             R.drawable.camera_detail
         )
 
-        recyclerView = findViewById(R.id.recyclerViewDelivery)
-        searchView = findViewById(R.id.searchDelivery)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
 

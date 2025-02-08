@@ -26,21 +26,6 @@
             android:name=".Activity.Tutoring_Details"
             android:exported="false" />
         <activity
-            android:name=".carpenter_Activity"
-            android:exported="false" />
-        <activity
-            android:name=".photographer_Activity"
-            android:exported="false" />
-        <activity
-            android:name=".barber_Activity"
-            android:exported="false" />
-        <activity
-            android:name=".electrician_Activity"
-            android:exported="false" />
-        <activity
-            android:name=".landscaping_Activity"
-            android:exported="false" />
-        <activity
             android:name=".Activity.plumbing_Activity"
             android:exported="false" />
         <activity

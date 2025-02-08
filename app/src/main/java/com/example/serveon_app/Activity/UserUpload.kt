@@ -14,6 +14,9 @@ import com.google.android.material.textfield.TextInputEditText
 class userUpload : AppCompatActivity() {
     private lateinit var name: TextInputEditText
     private lateinit var info: TextInputEditText
+    private lateinit var service: TextInputEditText
+    private lateinit var contact: TextInputEditText
+    private lateinit var rating: TextInputEditText
     private lateinit var upload: Button
     private lateinit var db: DBhelper
     private lateinit var homeIcon: ImageView
@@ -22,17 +25,23 @@ class userUpload : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_upload)
 
-        name = findViewById(R.id.textEdit)
-        info = findViewById(R.id.textEdit2)
+        name = findViewById(R.id.nameTextView)
+        info = findViewById(R.id.infoTextView)
+        service = findViewById(R.id.serviceTextView)
+        contact = findViewById(R.id.contactTextView)
+        rating = findViewById(R.id.ratingTextView)
         upload = findViewById(R.id.button)
-        homeIcon = findViewById(R.id.homeIcon2)
+        homeIcon = findViewById(R.id.homeIcon)
         db =  DBhelper(this)
 
         upload.setOnClickListener {
             val  name = name.text.toString()
             val info = info.text.toString()
-            val savedata = db.saveuserdata(name, info)
-            if(TextUtils.isEmpty(name) || TextUtils.isEmpty(info)){
+            val service = service.text.toString()
+            val contact = contact.text.toString()
+            val rating = rating.text.toString()
+            val savedata = db.saveuserdata(name, info, service, contact, rating)
+            if(TextUtils.isEmpty(name) || TextUtils.isEmpty(info) || TextUtils.isEmpty(service) || TextUtils.isEmpty(contact) || TextUtils.isEmpty(rating)){
                 Toast.makeText(this, "Add Name and Service Information", Toast.LENGTH_SHORT).show()
 
             }else{
