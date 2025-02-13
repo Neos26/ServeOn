@@ -7,4 +7,35 @@
 
 
     <style name="Theme.ServeOn_app" parent="Base.Theme.ServeOn_app" />
+
+    <style
+        name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">#d3f1df</item>
+    </style>
+    <style
+        name="App.Custom.purple" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">#e6e4ff</item>
+    </style>
+
+    <style
+        name="App.Custom.yellow" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">#ffec78</item>
+    </style>
+
+    <style
+        name="App.Custom.blue" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">#dcf0ff</item>
+    </style>
+
+    <style
+        name="App.Custom.orange" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">#ffece4</item>
+    </style>
+
+    <style
+        name="App.Custom.grey" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">#B4E0E0E0</item>
+    </style>
+
+
 </resources>

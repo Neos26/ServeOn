@@ -13,6 +13,27 @@
         android:theme="@style/Theme.ServeOn_app"
         tools:targetApi="31">
         <activity
+            android:name=".PlumbingDetails"
+            android:exported="false" />
+        <activity
+            android:name=".CateringDetails"
+            android:exported="false" />
+        <activity
+            android:name=".DeliveryDetails"
+            android:exported="false" />
+        <activity
+            android:name=".Grooming"
+            android:exported="false" />
+        <activity
+            android:name=".GraphicDesign"
+            android:exported="false" />
+        <activity
+            android:name=".HouseKeeping"
+            android:exported="false" />
+        <activity
+            android:name=".ChildCare"
+            android:exported="false" />
+        <activity
             android:name=".UserDetailsActivity"
             android:exported="false" />
         <activity
@@ -26,13 +47,13 @@
             android:name=".Activity.Tutoring_Details"
             android:exported="false" />
         <activity
-            android:name=".Activity.plumbing_Activity"
+            android:name=".Activity.Plumbing_Activity"
             android:exported="false" />
         <activity
-            android:name=".Activity.catering_Activity"
+            android:name=".Activity.Catering_Activity"
             android:exported="false" />
         <activity
-            android:name=".Activity.delivery_Activity"
+            android:name=".Activity.Delivery_Activity"
             android:exported="false" />
         <activity
             android:name=".Activity.tutoring_Activity"

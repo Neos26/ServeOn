@@ -5,12 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Activity.MainActivity" >
 
     <ScrollView
         android:id="@+id/scrollView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@android:color/transparent"
         android:paddingBottom="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,24 +32,23 @@
 
                 <ImageView
                     android:id="@+id/userImage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="12dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/user_1" />
+                    app:srcCompat="@drawable/logo_final" />
 
                 <TextView
                     android:id="@+id/welcomingText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:text="HELLO!"
+                    android:text="ServeON"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
+                    android:fontFamily="@font/inter"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/userImage"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -59,6 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/inter"
                 android:text="What Service do you\n need today?"
                 android:textColor="@color/black"
                 android:textSize="26sp"
@@ -85,18 +87,18 @@
                         android:layout_height="128dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:srcCompat="@drawable/light_1" />
+                        app:srcCompat="@drawable/sidetutoring" />
 
                     <ImageView
                         android:id="@+id/tutoringImage"
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
+                        android:layout_width="74dp"
+                        android:layout_height="74dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.19999999"
-                        app:srcCompat="@drawable/btn_1" />
+                        app:srcCompat="@drawable/tutoringicon" />
 
                     <TextView
                         android:id="@+id/tutoringText"
@@ -125,18 +127,18 @@
                         android:layout_height="128dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:srcCompat="@drawable/light_1" />
+                        app:srcCompat="@drawable/sideplumbing" />
 
                     <ImageView
                         android:id="@+id/plumbingImage"
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
+                        android:layout_width="74dp"
+                        android:layout_height="74dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.19999999"
-                        app:srcCompat="@drawable/btn_1" />
+                        app:srcCompat="@drawable/plumbingicon" />
 
                     <TextView
                         android:id="@+id/plumbingText"
@@ -174,18 +176,18 @@
                         android:layout_height="128dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:srcCompat="@drawable/light_1" />
+                        app:srcCompat="@drawable/sidephoto" />
 
                     <ImageView
                         android:id="@+id/photographerImage"
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
+                        android:layout_width="74dp"
+                        android:layout_height="74dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.19999999"
-                        app:srcCompat="@drawable/btn_1" />
+                        app:srcCompat="@drawable/photographyicon" />
 
                     <TextView
                         android:id="@+id/photographerText"
@@ -214,25 +216,25 @@
                         android:layout_height="128dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:srcCompat="@drawable/light_1" />
+                        app:srcCompat="@drawable/sidechoreo" />
 
                     <ImageView
                         android:id="@+id/deliveryImage"
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
+                        android:layout_width="74dp"
+                        android:layout_height="74dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.19999999"
-                        app:srcCompat="@drawable/btn_1" />
+                        app:srcCompat="@drawable/choreoicon" />
 
                     <TextView
                         android:id="@+id/deliveryText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:text="Tutoring"
+                        android:text="Choreographer"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:textStyle="bold"
@@ -255,6 +257,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:fontFamily="@font/inter"
                     android:text="Featured Services"
                     android:textColor="@color/black"
                     android:textSize="20sp"
@@ -288,21 +291,12 @@
                         android:id="@+id/imageSlider"
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
-                        app:iss_period="1000"
                         app:iss_auto_cycle="true"
+                        app:iss_corner_radius="20"
                         app:iss_delay="1000"
-                        app:iss_corner_radius="20" />
+                        app:iss_period="1000" />
 
                 </androidx.cardview.widget.CardView>
-
-                <ImageView
-                    android:layout_width="177dp"
-                    android:layout_height="175dp"
-                    android:layout_gravity="center"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/grid_image"
-                    tools:ignore="MissingConstraints" />
 
             </RelativeLayout>
 
@@ -320,6 +314,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:fontFamily="@font/inter"
                     android:text="User Added Services"
                     android:textColor="@color/black"
                     android:textSize="20sp"
@@ -329,6 +324,7 @@
                     android:id="@+id/seeAllTExt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
                     android:text="See all"
                     android:textColor="@color/black"
                     android:textSize="14dp"
@@ -340,7 +336,19 @@
                 android:layout_height="120dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
-                android:background="@drawable/banner_background2">
+                android:background="@drawable/banner_background_green">
+
+                <ImageView
+                    android:id="@+id/housekeepingbtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/sidehousekeeping"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </ImageView>
 
                 <ImageView
                     android:id="@+id/aiImage"
@@ -350,15 +358,16 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_1" />
+                    app:srcCompat="@drawable/housekeeping" />
 
                 <TextView
                     android:id="@+id/aiText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
-                    android:text="Plumbing with\n Charles"
+                    android:text="House Keeping"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -367,7 +376,8 @@
                     android:id="@+id/price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="P500"
+                    android:fontFamily="@font/inter"
+                    android:text="₱300/hr"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/aiText"
                     app:layout_constraintTop_toBottomOf="@+id/aiText" />
@@ -379,7 +389,19 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
-                android:background="@drawable/banner_background">
+                android:background="@drawable/banner_background_pink">
+
+                <ImageView
+                    android:id="@+id/childcarebtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/sidechildcare"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </ImageView>
 
                 <ImageView
                     android:id="@+id/aiImage1"
@@ -389,15 +411,16 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_1" />
+                    app:srcCompat="@drawable/childcare" />
 
                 <TextView
                     android:id="@+id/aiText1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
-                    android:text="Plumbing with\n Charles"
+                    android:text="Childcare"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -406,7 +429,8 @@
                     android:id="@+id/price1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="P500"
+                    android:fontFamily="@font/inter"
+                    android:text="₱800/Day"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/aiText1"
                     app:layout_constraintTop_toBottomOf="@+id/aiText1" />
@@ -418,7 +442,19 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
-                android:background="@drawable/banner_background">
+                android:background="@drawable/banner_background_blue">
+
+                <ImageView
+                    android:id="@+id/graphicbtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/sidedigital"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </ImageView>
 
                 <ImageView
                     android:id="@+id/aiImage2"
@@ -428,15 +464,16 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_1" />
+                    app:srcCompat="@drawable/digital" />
 
                 <TextView
                     android:id="@+id/aiText2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
-                    android:text="Plumbing with\n Charles"
+                    android:text="Graphic Design"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -445,10 +482,65 @@
                     android:id="@+id/price2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="P500"
+                    android:fontFamily="@font/inter"
+                    android:text="₱1000/Project"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/aiText2"
                     app:layout_constraintTop_toBottomOf="@+id/aiText2" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/banner_background_orange">
+
+                <ImageView
+                    android:id="@+id/groomerbtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/sidegrooming"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </ImageView>
+
+
+                <ImageView
+                    android:id="@+id/aiImage3"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/grooming" />
+
+                <TextView
+                    android:id="@+id/aiText3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Groomer"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/price3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
+                    android:text="₱700/Cut"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/aiText3"
+                    app:layout_constraintTop_toBottomOf="@+id/aiText3" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -460,87 +552,52 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/nav_background"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="10dp">
+        app:layout_constraintStart_toStartOf="parent">
 
-
-
-        <LinearLayout
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomappbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            >
+            android:layout_height="56dp"
+            app:fabAlignmentMode="center"
+            app:fabAnchorMode="cradle"
+            app:fabCradleMargin="24dp"
+            app:fabCradleRoundedCornerRadius="28dp"
+            app:fabCradleVerticalOffset="0dp"
+            android:backgroundTint="@color/white">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.25">
+        </com.google.android.material.bottomappbar.BottomAppBar>
 
-                <ImageView
-                    android:id="@+id/homeIcon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/bottom_btn1" />
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomnav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:elevation="0dp"
+            app:menu="@menu/bottom_nav_menu"
+            app:itemActiveIndicatorStyle="@style/App.Custom.grey"
+            app:labelVisibilityMode="labeled">
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.25">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:backgroundTint="#E0E0E0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_anchor="@id/bottomappbar"
+            app:layout_anchorGravity="top|center_horizontal"
+            android:layout_marginBottom="12dp"
+            android:src="@android:drawable/ic_input_add"
+            android:contentDescription="Floating Action Button">
 
-                <ImageView
-                    android:id="@+id/walletIcon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/bottom_btn2" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.25">
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
-                <ImageView
-                    android:id="@+id/accountIcon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/bottom_btn3" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.25">
-
-                <ImageView
-                    android:id="@+id/settingIcon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/bottom_btn4" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </LinearLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

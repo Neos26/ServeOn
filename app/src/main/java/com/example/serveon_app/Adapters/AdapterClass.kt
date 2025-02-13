@@ -27,6 +27,7 @@ class adapterClass (private val dataList: ArrayList<dataClass>) : RecyclerView.A
         val currentItem = dataList[position]
         holder.rvImage.setImageResource(currentItem.dataImage)
         holder.rvTitle.text = currentItem.dataTitle
+        holder.rvBackground.setImageResource(currentItem.backGroundImage)
 
         holder.itemView.setOnClickListener{
             onItemClick?.invoke(currentItem)
@@ -34,6 +35,7 @@ class adapterClass (private val dataList: ArrayList<dataClass>) : RecyclerView.A
     }
 
     class ViewHolderClass(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val rvBackground: ImageView = itemView.findViewById(R.id.background_img)
         val rvImage:ImageView = itemView.findViewById(R.id.pic)
         val rvTitle: TextView = itemView.findViewById(R.id.service_title)
 

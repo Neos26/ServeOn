@@ -3,6 +3,7 @@ package com.example.serveon_app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -11,6 +12,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.serveon_app.R
 import com.example.serveon_app.Adapters.adapterClass
 import com.example.serveon_app.DataClasses.dataClass
+import com.google.android.material.bottomappbar.BottomAppBar
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.util.Locale
 
 class tutoring_Activity : AppCompatActivity() {
@@ -28,26 +32,30 @@ class tutoring_Activity : AppCompatActivity() {
     private lateinit var myAdapter: adapterClass
     private lateinit var searchView: SearchView
     private lateinit var searchList: ArrayList<dataClass>
+    private lateinit var backGroundList: Array<Int>
     private lateinit var back_btn: ImageView
+    private lateinit var fab: FloatingActionButton
+    private lateinit var bottomNav: BottomNavigationView
+    private lateinit var bottomAppBar: BottomAppBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        enableEdgeToEdge()
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tutoring)
-
-        window.statusBarColor = ContextCompat.getColor(this, R.color.white)
 
 
 
         imageList = arrayOf(
-            R.drawable.ic_list,
-            R.drawable.ic_checkbox,
-            R.drawable.ic_image,
-            R.drawable.ic_toggle,
-            R.drawable.ic_date,
-            R.drawable.ic_rating,
-            R.drawable.ic_time,
-            R.drawable.ic_text,
-            R.drawable.ic_edit
+            R.drawable.appdev,
+            R.drawable.infomanagement,
+            R.drawable.datastructures,
+            R.drawable.introprog,
+            R.drawable.hardware,
+            R.drawable.oop,
+            R.drawable.discrete,
+            R.drawable.comporg,
+            R.drawable.plattech
         )
 
         titleList = arrayOf(
@@ -55,7 +63,7 @@ class tutoring_Activity : AppCompatActivity() {
             "Information Management",
             "Data structures",
             "Introduction to Programming",
-            "Introduction to Computing ",
+            "Hardware and Software ",
             "Object Oriented Programming",
             "Discrete Structures",
             "Computer Organization",
@@ -63,47 +71,48 @@ class tutoring_Activity : AppCompatActivity() {
 
         nameList = arrayOf(
             "Jerry Lucas",
-            "Information Management",
-            "Data structures",
-            "Introduction to Programming",
-            "Introduction to Computing ",
-            "Object Oriented Programming",
-            "Discrete Structures",
-            "Computer Organization",
-            "Platform Technologies")
+            "Michael Johnson",
+            "Sarah Thompson",
+            "David Martinez",
+            "Emily Robinson",
+            "Christopher Adams",
+            "Jessica Lewis",
+            "Daniel Walker",
+            "Olivia Harris")
 
         serviceList = arrayOf(
             "Tutoring",
-            "Information Management",
-            "Data structures",
-            "Introduction to Programming",
-            "Introduction to Computing ",
-            "Object Oriented Programming",
-            "Discrete Structures",
-            "Computer Organization",
-            "Platform Technologies")
+            "Tutoring",
+            "Tutoring",
+            "Tutoring",
+            "Tutoring",
+            "Tutoring",
+            "Tutoring",
+            "Tutoring",
+            "Tutoring")
 
         contactList = arrayOf(
-            "JerryLucas@gmail.com",
-            "Information Management",
-            "Data structures",
-            "Introduction to Programming",
-            "Introduction to Computing ",
-            "Object Oriented Programming",
-            "Discrete Structures",
-            "Computer Organization",
-            "Platform Technologies")
+            "jerry.lucas@gmail.com",
+            "michael.johnson@gmail.com",
+            "sarah.thompson@gmail.com",
+            "david.martinez@gmail.com",
+            "emily.robinson@gmail.com",
+            "christopher.adams@gmail.com",
+            "jessica.lewis@gmail.com",
+            "daniel.walker@gmail.com",
+            "olivia.harris@gmail.com"
+        )
 
         ratingList = arrayOf(
-            "300 pesos /1hr",
-            "Information Management",
-            "Data structures",
-            "Introduction to Programming",
-            "Introduction to Computing ",
-            "Object Oriented Programming",
-            "Discrete Structures",
-            "Computer Organization",
-            "Platform Technologies")
+            "300 pesos / 1hr",
+            "350 pesos / 1hr",
+            "400 pesos / 1hr",
+            "450 pesos / 1hr",
+            "500 pesos / 1hr",
+            "550 pesos / 1hr",
+            "600 pesos / 1hr",
+            "650 pesos / 1hr",
+            "700 pesos / 1hr")
 
 
         descList = arrayOf(
@@ -129,9 +138,26 @@ class tutoring_Activity : AppCompatActivity() {
             R.drawable.camera_detail
         )
 
+        backGroundList = arrayOf(
+            R.drawable.bg_1,
+            R.drawable.bg_2,
+            R.drawable.bg_3,
+            R.drawable.bg_4,
+            R.drawable.bg_5,
+            R.drawable.bg_1,
+            R.drawable.bg_2,
+            R.drawable.bg_3,
+            R.drawable.bg_4
+
+        )
+
         recyclerView = findViewById(R.id.recyclerViewTutoring)
         searchView = findViewById(R.id.searchTutoring)
         back_btn = findViewById(R.id.back_btn)
+        bottomNav = findViewById(R.id.bottomnav)
+        fab = findViewById(R.id.fab)
+        bottomAppBar = findViewById(R.id.bottomappbar)
+
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
 
@@ -180,7 +206,7 @@ class tutoring_Activity : AppCompatActivity() {
         for (i in imageList.indices) {
             if (i < titleList.size) {
                 val dataClass = dataClass(imageList[i], titleList[i], descList[i], nameList[i], contactList[i], serviceList[i],
-                    ratingList[i], detailImageList[i])
+                    ratingList[i], detailImageList[i], backGroundList[i])
                 dataList.add(dataClass)
             }
         }
@@ -191,6 +217,26 @@ class tutoring_Activity : AppCompatActivity() {
         back_btn.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+        }
+        fab.setOnClickListener {
+            val intent = Intent(this, userUpload::class.java)
+            startActivity(intent)
+
+        }
+
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_home -> {
+                    startActivity(Intent(this, MainActivity::class.java))
+                    true
+
+                }
+                R.id.nav_search -> {
+                    startActivity(Intent(this, User_display::class.java))
+                    true
+                }
+                else -> false
+            }
         }
     }
 }

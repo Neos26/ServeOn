@@ -4,7 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class dataClass(var dataImage: Int, var dataTitle: String,var dataDesc: String, var namelist: String, var servicelist: String,
-                     var contactlist: String, var ratinglist: String, var dataDetailImage: Int):
+                     var contactlist: String, var ratinglist: String, var dataDetailImage: Int, var backGroundImage: Int):
     Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
@@ -14,7 +14,9 @@ data class dataClass(var dataImage: Int, var dataTitle: String,var dataDesc: Str
         parcel.readString()!!,
         parcel.readString()!!,
         parcel.readString()!!,
+        parcel.readInt(),
         parcel.readInt()
+
     ) {
     }
 
@@ -27,6 +29,7 @@ data class dataClass(var dataImage: Int, var dataTitle: String,var dataDesc: Str
         parcel.writeString(contactlist)
         parcel.writeString(ratinglist)
         parcel.writeInt(dataDetailImage)
+        parcel.writeInt(backGroundImage)
     }
 
     override fun describeContents(): Int {

@@ -6,9 +6,13 @@ import android.text.TextUtils
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.serveon_app.DBhelper
 import com.example.serveon_app.R
+import com.google.android.material.bottomappbar.BottomAppBar
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.textfield.TextInputEditText
 
 class userUpload : AppCompatActivity() {
@@ -19,9 +23,13 @@ class userUpload : AppCompatActivity() {
     private lateinit var rating: TextInputEditText
     private lateinit var upload: Button
     private lateinit var db: DBhelper
-    private lateinit var homeIcon: ImageView
+    private lateinit var fab: FloatingActionButton
+    private lateinit var bottomNav: BottomNavigationView
+    private lateinit var bottomAppBar: BottomAppBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        enableEdgeToEdge()
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_upload)
 
@@ -31,7 +39,10 @@ class userUpload : AppCompatActivity() {
         contact = findViewById(R.id.contactTextView)
         rating = findViewById(R.id.ratingTextView)
         upload = findViewById(R.id.button)
-        homeIcon = findViewById(R.id.homeIcon)
+        fab = findViewById(R.id.fab)
+        bottomNav = findViewById(R.id.bottomnav)
+        bottomAppBar = findViewById(R.id.bottomappbar)
+
         db =  DBhelper(this)
 
         upload.setOnClickListener {
@@ -54,10 +65,28 @@ class userUpload : AppCompatActivity() {
 
         }
 
-        homeIcon.setOnClickListener{
-                val intent = Intent(this, MainActivity::class.java)
+        fab.setOnClickListener {
+            if (this::class.java != userUpload::class.java) {
+                val intent = Intent(this, userUpload::class.java)
                 startActivity(intent)
             }
+
+        }
+
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_home -> {
+                    startActivity(Intent(this, MainActivity::class.java))
+                    true
+
+                }
+                R.id.nav_search -> {
+                        startActivity(Intent(this, User_display::class.java))
+                    true
+                }
+                else -> false
+            }
+        }
 
     }
 }

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.database.Cursor
 import android.os.Bundle
 import android.widget.ImageView
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
@@ -14,6 +15,9 @@ import com.example.serveon_app.R
 import com.example.serveon_app.DataClasses.data_list
 import com.example.serveon_app.Adapters.myAdapter
 import com.example.serveon_app.UserDetailsActivity
+import com.google.android.material.bottomappbar.BottomAppBar
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.util.Locale
 
 class User_display : AppCompatActivity() {
@@ -25,15 +29,22 @@ class User_display : AppCompatActivity() {
     private lateinit var dbh: DBhelper
     private lateinit var newArray: ArrayList<data_list>
     private lateinit var back_btn3: ImageView
+    private lateinit var bottomNav: BottomNavigationView
+    private lateinit var fab: FloatingActionButton
+    private lateinit var bottomAppBar: BottomAppBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        enableEdgeToEdge()
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_display)
-        window.statusBarColor = ContextCompat.getColor(this, R.color.white)
 
         recyclerView = findViewById(R.id.recyclerView)
         searchView = findViewById(R.id.searchTutoring)
         back_btn3 = findViewById(R.id.back_btn)
+        bottomNav = findViewById(R.id.bottomnav)
+        fab = findViewById(R.id.fab)
+        bottomAppBar = findViewById(R.id.bottomappbar)
 
         dataList = arrayListOf()
         dbh = DBhelper(this)
@@ -99,5 +110,29 @@ class User_display : AppCompatActivity() {
 
         adapter = myAdapter(dataList) // Set up adapter with initial full list
         recyclerView.adapter = adapter
+
+        fab.setOnClickListener {
+            val intent = Intent(this, userUpload::class.java)
+            startActivity(intent)
+
+        }
+
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_home -> {
+                        startActivity(Intent(this, MainActivity::class.java))
+                    true
+
+                }
+                R.id.nav_search -> {
+                    if (this::class.java != User_display::class.java) {
+                    startActivity(Intent(this, User_display::class.java))
+                        }
+                    true
+                }
+                else -> false
+            }
+        }
+
     }
 }
